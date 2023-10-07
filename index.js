@@ -7,10 +7,13 @@ config();
 
 
 const app=express()
-const pool = new pg.Pool({
-    connecionString: process.env.DATABASE_URL
-    //ssl: true
-})
+
+
+const pool = new pg.Pool({connectionString: process.env.DATABASE_URL, ssl:true});
+
+
+
+
 
 app.get('/', (req, res)=>{
     res.send('Bienvenido al api del marco geoestadistico nacional');
